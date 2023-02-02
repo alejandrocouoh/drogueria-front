@@ -1,0 +1,24 @@
+<p-table [value]="productos">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Id</th>
+            <th>Nombre Medicamento</th>
+            <th>Laboratorio</th>
+            <th>Fecha Elaboracion</th>
+            <th>Fecha Caducidad</th>
+            <th>Stock</th>
+            <th>Precio</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-productos>
+        <tr>
+            <td>{{productos.id}}</td>
+            <td>{{productos.nombre}}</td>
+            <td>{{productos.laboratorio}}</td>
+            <td>{{productos.elaboracion}}</td>
+            <td>{{productos.caducidad}}</td>
+            <td>{{productos.stock}}</td>
+            <td>{{productos.precio}}</td>
+        </tr>
+    </ng-template>
+</p-table>
