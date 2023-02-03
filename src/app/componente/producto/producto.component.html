@@ -1,24 +1,15 @@
-<p-table [value]="productos">
-    <ng-template pTemplate="header">
-        <tr>
-            <th>Id</th>
-            <th>Nombre Medicamento</th>
-            <th>Laboratorio</th>
-            <th>Fecha Elaboracion</th>
-            <th>Fecha Caducidad</th>
-            <th>Stock</th>
-            <th>Precio</th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-productos>
-        <tr>
-            <td>{{productos.id}}</td>
-            <td>{{productos.nombre}}</td>
-            <td>{{productos.laboratorio}}</td>
-            <td>{{productos.elaboracion}}</td>
-            <td>{{productos.caducidad}}</td>
-            <td>{{productos.stock}}</td>
-            <td>{{productos.precio}}</td>
-        </tr>
-    </ng-template>
-</p-table>
+<div class="ui-g">
+   <p-panel header="Lista de Productos" [style]="{width: '70%'}"> 
+        <p-table [value]="productos" [columns]="columnas" [paginator]="true" [rows]="3">
+            <ng-template pTemplate="header" let-columnas>
+                <tr>
+                    <th *ngFor="let columna of columnas">{{columnas.header}}</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-productos let-columnas="columnas">
+                <tr>
+                    <td *ngFor="let columna of columnas"> {{productos[columnas.field]}} </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </p-panel> 
