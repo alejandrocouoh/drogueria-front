@@ -1,0 +1,42 @@
+<div>
+    <p-panel>
+        <ng-template pTemplate="header">
+            <h1><b>Nuevo Producto</b></h1>
+        </ng-template>
+        <form>
+            <span class="p-float-label">
+                <input id="float-input" type="text" pInputText size="32">
+                <label for="float-input">Nombre del producto</label>
+            </span>
+            <br />
+            <span class="p-float-label">
+                <input id="float-input" type="text" pInputText size="32">
+                <label for="float-input">Laboratorio de Fabricación</label>
+            </span>
+            <br>
+            <div class="field col-12 md:col-4">
+                <label for="dateformat">Fecha de Elaboración</label>
+                <p-calendar dateFormat="mm-dd-yy" inputId="dateformat"></p-calendar>
+            </div>
+            <br>
+            <div class="field col-12 md:col-4">
+                <label for="dateformat">Fecha de Caducidad</label>
+                <p-calendar dateFormat="mm-dd-yy" inputId="dateformat"></p-calendar>
+            </div>
+            <br>
+            <span class="p-float-label">
+                <input id="float-input" type="text" pInputText size="32">
+                <label for="float-input">Stock</label>
+            </span>
+            <br>
+            <span class="p-float-label">
+                <input id="float-input" type="text" pInputText size="32">
+                <label for="float-input">Costo del producto</label>
+            </span>
+        </form>
+        <ng-template pTemplate="footer">
+            <button pButton type="button" label="Agregar" class="p-button-text p-button-success"></button>
+            <button pButton type="button" label="Cancelar" class="p-button-text p-button-danger"></button>
+        </ng-template>
+    </p-panel>
+</div>
