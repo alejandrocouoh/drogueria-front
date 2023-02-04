@@ -21,6 +21,7 @@ export class ProductoComponent implements OnInit{
   obtenerProductos(){
     this.productosService.listarProductos().subscribe(
       (result:any)=>{
+        let productos:Productos[] = [];
         for(let i = 0; i<result.length; i++){
           let producto = result[i] as Productos;
           this.productos.push(producto);
