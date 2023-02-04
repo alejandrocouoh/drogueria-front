@@ -1,15 +1,24 @@
 <div class="ui-g">
-   <p-panel header="Lista de Productos" [style]="{width: '70%'}"> 
-        <p-table [value]="productos" [columns]="columnas" [paginator]="true" [rows]="3">
+   <p-panel header="Lista de Productos" > 
+    <div style="margin-bottom: 20px;">
+        <button pButton type="button" label="Nuevo" class="p-button-text p-button-success"></button>
+    </div>
+        <p-table [value]="productos" [columns]="columnas" [paginator]="true" [rows]="10">
             <ng-template pTemplate="header" let-columnas>
                 <tr>
-                    <th *ngFor="let columna of columnas">{{columnas.header}}</th>
+                    <th *ngFor="let columna of columnas">{{columna.header}}</th>
+                    <th>Acciones</th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-productos let-columnas="columnas">
+            <ng-template pTemplate="body" let-producto>
                 <tr>
-                    <td *ngFor="let columna of columnas"> {{productos[columnas.field]}} </td>
+                    <td *ngFor="let columna of columnas"> {{producto[columna.field]}} </td>
+                    <td>
+                        <button pButton type="button" label="Editar" class="p-button-text p-button-secondary"></button>
+                        <button pButton type="button" label="Eliminar" class="p-button-text p-button-danger"></button>
+                    </td>
                 </tr>
             </ng-template>
         </p-table>
     </p-panel> 
+</div>

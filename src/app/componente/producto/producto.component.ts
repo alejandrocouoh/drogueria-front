@@ -1,5 +1,6 @@
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 import { Productos } from 'src/app/model/Productos';
 import { ProductoService } from 'src/app/servicio/producto.service';
 
@@ -13,6 +14,8 @@ export class ProductoComponent implements OnInit{
 
   productos:Productos[] = [];
   columnas:any[] = [];
+  items:MenuItem[] = [];
+  displayitems:boolean = false;
 
   constructor(private productosService:ProductoService){
 
@@ -26,9 +29,6 @@ export class ProductoComponent implements OnInit{
           let producto = result[i] as Productos;
           this.productos.push(producto);
         }
-        this.productos = productos;
-      }, error=>{
-        console.log(error)
       }
     );
   }
@@ -42,7 +42,7 @@ export class ProductoComponent implements OnInit{
       {field: "elaboracion", header: "Elaboracion"},
       {field: "caducidad", header: "Caducidad"},
       {field: "stock", header: "Stock"},
-      {field: "precio", header: "Precio"},
+      {field: "precio", header: "Precio"}
     ];
   }
 

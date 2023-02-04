@@ -9,6 +9,7 @@ import { ProductoComponent } from './componente/producto/producto.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PanelModule } from 'primeng/panel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TableModule,
     HttpClientModule,
     PanelModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
