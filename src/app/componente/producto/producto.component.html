@@ -1,7 +1,11 @@
 <div class="ui-g">
-   <p-panel header="Lista de Productos" > 
+   <p-panel >
+    <ng-template pTemplate="header">
+        <h1><b>Lista de Productos</b></h1>
+    </ng-template> 
     <div style="margin-bottom: 20px;">
-        <button pButton type="button" label="Nuevo" class="p-button-text p-button-success"></button>
+        <button pButton type="button" label="Nuevo" class="p-button-text p-button-success" 
+        routerLink="/nuevo-producto" routerLinkActive="active"></button>
     </div>
         <p-table [value]="productos" [columns]="columnas" [paginator]="true" [rows]="10">
             <ng-template pTemplate="header" let-columnas>

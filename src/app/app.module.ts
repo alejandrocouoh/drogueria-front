@@ -10,11 +10,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { PanelModule } from 'primeng/panel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
+import { NuevoProductoComponent } from './componente/registrar/nuevo-producto/nuevo-producto.component';
+import {CalendarModule} from 'primeng/calendar';
+import {InputTextModule} from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductoComponent
+    ProductoComponent,
+    NuevoProductoComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,9 @@ import {ButtonModule} from 'primeng/button';
     HttpClientModule,
     PanelModule,
     BrowserAnimationsModule,
-    ButtonModule
+    ButtonModule,
+    CalendarModule,
+    InputTextModule
   ],
   providers: [],
   bootstrap: [AppComponent]
